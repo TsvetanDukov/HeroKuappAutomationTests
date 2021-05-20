@@ -23,4 +23,11 @@ public class ContextMenuPage {
     public boolean isDisplayedBoxField() {
         return driver.findElement(box).isDisplayed();
     }
+    public String getAlertText() {
+        return driver.switchTo().alert().getText();
+    }
+
+    public void closeAlert() {
+        driver.switchTo().alert().accept();
+    }
 }
