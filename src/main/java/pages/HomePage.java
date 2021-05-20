@@ -9,6 +9,7 @@ public class HomePage {
     private By formAuthenticationLink = By.linkText("Form Authentication");
     private By dropdownLink = By.linkText("Dropdown");
     private By checkbox = By.linkText("Checkboxes");
+    private By addRemoveElements = By.linkText("Add/Remove Elements");
 
     //Constructor to instantiate driver
     public HomePage(WebDriver driver) {
@@ -29,6 +30,11 @@ public class HomePage {
     public Checkboxes clickCheckboxLink() {
         driver.findElement(checkbox).click();
         return new Checkboxes(driver);
+    }
+
+    public AddRemoveElements clickAddRemoveElementsLink() {
+        driver.findElement(addRemoveElements).click();
+        return new AddRemoveElements(driver);
     }
     //Create generic method for all links interaction
     //We will find all elements by linkText

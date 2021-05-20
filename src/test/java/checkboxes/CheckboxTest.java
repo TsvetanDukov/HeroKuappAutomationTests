@@ -7,20 +7,20 @@ import pages.Checkboxes;
 public class CheckboxTest extends BaseTests {
 
     @Test
-    public void selectFirstCheckbox() {
+    public void testFirstCheckbox() {
 
         Checkboxes checkboxPage = homePage.clickCheckboxLink();
         checkboxPage.selectCheckbox1();
     }
 
     @Test
-    public void selectSecondCheckbox() {
+    public void testSecondCheckbox() {
         Checkboxes checkboxPage = homePage.clickCheckboxLink();
         checkboxPage.selectCheckbox2();
     }
 
     @Test
-    public void selectBothCheckboxes() {
+    public void testBothCheckboxes() {
         Checkboxes checkboxPage = homePage.clickCheckboxLink();
         checkboxPage.selectCheckbox1();
         checkboxPage.selectCheckbox2();
