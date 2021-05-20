@@ -6,7 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
-public class BaseTests {
+public class BaseTest {
 
     private WebDriver driver;
     //Protected because classes that inherit from this should have access to this object

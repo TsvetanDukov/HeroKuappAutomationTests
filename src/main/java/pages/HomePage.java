@@ -10,6 +10,8 @@ public class HomePage {
     private By dropdownLink = By.linkText("Dropdown");
     private By checkbox = By.linkText("Checkboxes");
     private By addRemoveElements = By.linkText("Add/Remove Elements");
+    private By hovers = By.linkText("Hovers");
+    private By contextMenu = By.linkText("Context Menu");
 
     //Constructor to instantiate driver
     public HomePage(WebDriver driver) {
@@ -27,14 +29,24 @@ public class HomePage {
         return new DropdownPage(driver);
     }
 
-    public Checkboxes clickCheckboxLink() {
+    public CheckboxesPage clickCheckboxLink() {
         driver.findElement(checkbox).click();
-        return new Checkboxes(driver);
+        return new CheckboxesPage(driver);
     }
 
-    public AddRemoveElements clickAddRemoveElementsLink() {
+    public AddRemoveElementsPage clickAddRemoveElementsLink() {
         driver.findElement(addRemoveElements).click();
-        return new AddRemoveElements(driver);
+        return new AddRemoveElementsPage(driver);
+    }
+
+    public HoversPage clickHoversLink() {
+        driver.findElement(hovers).click();
+        return new HoversPage(driver);
+    }
+
+    public ContextMenuPage clickContextMenuLink() {
+        driver.findElement(contextMenu).click();
+        return new ContextMenuPage(driver);
     }
     //Create generic method for all links interaction
     //We will find all elements by linkText

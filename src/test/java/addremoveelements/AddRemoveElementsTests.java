@@ -1,34 +1,40 @@
 package addremoveelements;
 
-import base.BaseTests;
+import base.BaseTest;
 import org.testng.annotations.Test;
-import pages.AddRemoveElements;
+import pages.AddRemoveElementsPage;
 
-public class AddRemoveElementsTests extends BaseTests {
+import static org.testng.Assert.assertTrue;
+
+public class AddRemoveElementsTests extends BaseTest {
 
     @Test
     public void testAddElementOption() {
 
-        AddRemoveElements addRemoveElements= homePage.clickAddRemoveElementsLink();
+        AddRemoveElementsPage addRemoveElements= homePage.clickAddRemoveElementsLink();
+        assertTrue(addRemoveElements.isDisplayedAddElement());
         addRemoveElements.clickAddElementButton();
+        assertTrue(addRemoveElements.isDisplayedRemoveElement());
     }
 
     @Test
     public void testAddElementMultipleTimes() {
-        AddRemoveElements addRemoveElements = homePage.clickAddRemoveElementsLink();
+        AddRemoveElementsPage addRemoveElements = homePage.clickAddRemoveElementsLink();
         addRemoveElements.clickAddElementButtonMultipleTimes();
     }
 
     @Test
     public void testRemoveElementOption () {
-        AddRemoveElements addRemoveElements = homePage.clickAddRemoveElementsLink();
+        AddRemoveElementsPage addRemoveElements = homePage.clickAddRemoveElementsLink();
+        assertTrue(addRemoveElements.isDisplayedAddElement());
         addRemoveElements.clickAddElementButton();
+        assertTrue(addRemoveElements.isDisplayedRemoveElement());
         addRemoveElements.clickRemoveElement();
     }
 
     @Test
     public void testRemoveElementMultipleTimes() {
-        AddRemoveElements addRemoveElements = homePage.clickAddRemoveElementsLink();
+        AddRemoveElementsPage addRemoveElements = homePage.clickAddRemoveElementsLink();
         addRemoveElements.clickAddElementButtonMultipleTimes();
         addRemoveElements.clickRemoveElementButtonMultipleTimes();
     }
