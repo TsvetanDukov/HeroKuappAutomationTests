@@ -12,6 +12,12 @@ public class HomePage {
     private By addRemoveElements = By.linkText("Add/Remove Elements");
     private By hovers = By.linkText("Hovers");
     private By contextMenu = By.linkText("Context Menu");
+    private By keyPresses = By.linkText("Key Presses");
+    private By horizontalSlider = By.linkText("Horizontal Slider");
+    private By javascriptAlerts = By.linkText("JavaScript Alerts");
+    private By fileUpload = By.linkText("File Upload");
+    private By wysiwygEditor = By.linkText("WYSIWYG Editor");
+    private By frames = By.linkText("Frames");
 
     //Constructor to instantiate driver
     public HomePage(WebDriver driver) {
@@ -48,7 +54,37 @@ public class HomePage {
         driver.findElement(contextMenu).click();
         return new ContextMenuPage(driver);
     }
-    //Create generic method for all links interaction
+
+    public KeyPressesPage clickKeyPressesLink() {
+        driver.findElement(keyPresses).click();
+        return new KeyPressesPage(driver);
+    }
+
+    public HorizontalSliderPage clickHorizontalSliderLink() {
+        driver.findElement(horizontalSlider).click();
+        return new HorizontalSliderPage(driver);
+    }
+
+    public JavascriptAlertsPage clickJavascriptAlertsLink() {
+        driver.findElement(javascriptAlerts).click();
+        return new JavascriptAlertsPage(driver);
+    }
+
+    public FileUploadPage clickFileUploadLink() {
+        driver.findElement(fileUpload).click();
+        return new FileUploadPage(driver);
+    }
+
+    public WysiwygEditorPage clickWysiwygEditorLink() {
+        driver.findElement(wysiwygEditor).click();
+        return new WysiwygEditorPage(driver);
+    }
+
+    public FramesPage clickFramesLink() {
+        driver.findElement(frames).click();
+        return new FramesPage(driver);
+    }
+    //Create a generic method for all links interaction
     //We will find all elements by linkText
     public void clickLinks(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
