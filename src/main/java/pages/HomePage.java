@@ -18,6 +18,9 @@ public class HomePage {
     private By fileUpload = By.linkText("File Upload");
     private By wysiwygEditor = By.linkText("WYSIWYG Editor");
     private By frames = By.linkText("Frames");
+    private By dynamicLoading = By.linkText("Dynamic Loading");
+    private By largeAndDeepDom = By.linkText("Large & Deep DOM");
+    private By infiniteScroll = By.linkText("Infinite Scroll");
 
     //Constructor to instantiate driver
     public HomePage(WebDriver driver) {
@@ -83,6 +86,21 @@ public class HomePage {
     public FramesPage clickFramesLink() {
         driver.findElement(frames).click();
         return new FramesPage(driver);
+    }
+
+    public DynamicLoadingPage clickDynamicLoadingLink() {
+        driver.findElement(dynamicLoading).click();
+        return new DynamicLoadingPage(driver);
+    }
+
+    public LargeAndDeepDomPage clickLargeAndDeepDomLink() {
+        driver.findElement(largeAndDeepDom).click();
+        return new LargeAndDeepDomPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScrollLink() {
+        driver.findElement(infiniteScroll).click();
+        return new InfiniteScrollPage(driver);
     }
     //Create a generic method for all links interaction
     //We will find all elements by linkText

@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.WindowManager;
 
 public class BaseTest {
 
@@ -31,5 +32,9 @@ public class BaseTest {
     @AfterClass
     public void tearDown() {
 
+    }
+
+    public WindowManager getWindowManager() {
+        return new WindowManager(driver);
     }
 }
