@@ -21,6 +21,7 @@ public class HomePage {
     private By dynamicLoading = By.linkText("Dynamic Loading");
     private By largeAndDeepDom = By.linkText("Large & Deep DOM");
     private By infiniteScroll = By.linkText("Infinite Scroll");
+    private By multipleWindows = By.linkText("Multiple Windows");
 
     //Constructor to instantiate driver
     public HomePage(WebDriver driver) {
@@ -101,6 +102,11 @@ public class HomePage {
     public InfiniteScrollPage clickInfiniteScrollLink() {
         driver.findElement(infiniteScroll).click();
         return new InfiniteScrollPage(driver);
+    }
+
+    public MultipleWindows clickMultipleWindowsLink() {
+        driver.findElement(multipleWindows).click();
+        return new MultipleWindows(driver);
     }
     //Create a generic method for all links interaction
     //We will find all elements by linkText
